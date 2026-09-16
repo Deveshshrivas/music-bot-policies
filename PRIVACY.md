@@ -15,6 +15,8 @@ The bot has no feature for recording users' voice audio, building advertising pr
 
 ## Service providers and disclosure
 
+If the operator configures optional YouTube authentication, the operator's YouTube session cookies are stored as a hosting environment variable and supplied to YouTube through the extractor. They are copied into a restricted temporary file for each extraction and that file is deleted afterwards. The configured variable remains until the operator removes it. The bot does not request cookies from ordinary users or automatically read users' browsers. Authenticated requests may be associated with the operator's YouTube account. The operator should not use an account whose private content must remain inaccessible to bot users.
+
 **Discord** handles commands, bot messages, server information, and voice delivery. **Railway** hosts the running bot and its operational logs. **YouTube and its media infrastructure** receive requests for the links you submit, including the hosting server's network information; the bot does not intentionally attach your Discord identity to those requests. **GitHub** hosts these policy pages and support issues and processes visits and support activity under its own policies.
 
 These providers process information under their own terms and privacy policies: [Discord](https://discord.com/privacy), [Railway](https://railway.com/legal/privacy), [Google/YouTube](https://policies.google.com/privacy), and [GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Information may be processed outside your country depending on their infrastructure. The operator may also disclose information where required by law or necessary to investigate abuse and protect the service.
