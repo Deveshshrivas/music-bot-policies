@@ -11,7 +11,7 @@ This policy describes the Discord application **music**, application ID **154982
 - **Operational diagnostics:** Connection events, errors, extraction warnings, track identifiers and technical details may appear in application or hosting logs. Some third-party diagnostic messages may include media URLs or connection metadata. Logs are used to troubleshoot failures and operate the service.
 - **Support requests:** If you open a GitHub issue, your GitHub account name and the information you submit are visible in the public issue and used to handle your request.
 
-The bot has no feature for recording users' voice audio, building advertising profiles, or selling personal information. It does not intentionally collect ordinary message content; it uses slash commands and does not enable Discord's privileged Message Content intent. It has no application database or saved listening-history feature.
+The bot does not build advertising profiles or sell personal information. Optional live AI voice processing is described below. It does not intentionally collect ordinary message content; it uses slash commands and does not enable Discord's privileged Message Content intent. It has no application database or saved listening-history feature.
 
 ## Service providers and disclosure
 
@@ -45,3 +45,8 @@ Updates to this policy will be posted here with a revised effective date. Contac
 ## Video downloads
 
 The /download command temporarily saves a requested video on the hosting server and uploads it as a Discord attachment. Temporary video files are removed after upload or failure; an interrupted container may retain them until its ephemeral filesystem is removed. Uploaded attachments and command responses remain on Discord until deleted, subject to Discord retention controls. The command uses the same optional operator YouTube authentication as playback.
+
+
+## Optional live AI voice conversations
+
+The optional live AI voice feature receives short audio buffers only for speakers who opt in with /listen during a /join session. Those buffers and up to two recent question/reply turns per opted-in speaker are sent to OpenRouter and its selected model provider for generating a response. Generated response text is sent to Microsoft through its online speech service for synthesis. Other people in the voice channel can hear the replies. Short audio turns (up to 15 seconds each) and conversation context are held in memory; synthesized reply audio is saved to a temporary file for playback and removed afterwards. /unlisten clears your local buffers and history; leaving the channel, /leave, session expiry or process restart also clears session context. Requests already sent to providers cannot be recalled, and those providers retain/process data under their own policies and account settings. This feature does not intentionally log audio, questions or reply text. The bot drops non-opted-in audio before application buffering or provider submission, although Discord and the receiving library handle incoming voice packets. OpenRouter: https://openrouter.ai/privacy ; Microsoft: https://privacy.microsoft.com/privacystatement .

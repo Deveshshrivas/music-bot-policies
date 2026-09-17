@@ -35,3 +35,8 @@ Changes will be published on this page with an updated effective date. Review th
 For support, rights-related concerns, or questions about these terms, [open a support request](https://github.com/Deveshshrivas/music-bot-policies/issues/new). Issues are public: describe the request without passwords, tokens, or sensitive personal information. If a request needs private details, ask the operator to arrange a private follow-up before sharing them.
 
 This bot is independently operated and is not endorsed by Discord, YouTube, or Railway.
+
+
+## AI conversations
+
+Live AI replies may be inaccurate and should not be treated as professional advice. The bot identifies as AI. Use /listen only for yourself; replies can be heard by others in the channel. Third-party AI model and speech-service rules apply, and free service availability is not guaranteed.
