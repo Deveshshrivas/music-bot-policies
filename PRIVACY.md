@@ -23,7 +23,7 @@ These providers process information under their own terms and privacy policies: 
 
 ## Retention
 
-Playback queues, prepared stream references, and volume settings are held in process memory. `/stop` clears the active queue and its stream cache; process restarts clear in-memory session state. Some Discord library caches and server identifiers can remain in memory until the process restarts. The current bot does not deliberately save complete songs to disk.
+Playback queues, prepared stream references, and volume settings are held in process memory. `/stop` clears the active queue and its stream cache; process restarts clear in-memory session state. Some Discord library caches and server identifiers can remain in memory until the process restarts. Voice playback streams audio without deliberately saving complete songs to disk; the separate download feature is described below.
 
 Bot messages and your command interactions remain subject to Discord's retention and deletion controls; `/stop` does not delete text-channel messages. Hosting diagnostics follow the host's configured log retention, which is separate from the playback queue. No fixed hosting-log deletion period is represented here. Public support issues remain on GitHub until removed, subject to GitHub's own retention rules.
 
@@ -40,3 +40,8 @@ Access to bot credentials and hosting administration is intended for the operato
 ## Changes
 
 Updates to this policy will be posted here with a revised effective date. Contact the operator through the support link above with questions about the bot's handling of information.
+
+
+## Video downloads
+
+The /download command temporarily saves a requested video on the hosting server and uploads it as a Discord attachment. Temporary video files are removed after upload or failure; an interrupted container may retain them until its ephemeral filesystem is removed. Uploaded attachments and command responses remain on Discord until deleted, subject to Discord retention controls. The command uses the same optional operator YouTube authentication as playback.
